@@ -3,11 +3,12 @@ const app=express();
 
 app.set("view engine","ejs");
 app.get("/",(req,res)=>{
-    res.send("Hello Jee, kaise ho saare");
+    res.render("index",{age:13});
 });
-app.get("/profile/:username",(req,res)=>{
-    res.send(`Hello from ${req.params.username}`);
+app.get("/contact",(req,res)=>{
+    res.render("contact",{age:17});
 });
+
 app.listen(8000,()=>{
     console.log("Server Started at port no. 8000");
 });
